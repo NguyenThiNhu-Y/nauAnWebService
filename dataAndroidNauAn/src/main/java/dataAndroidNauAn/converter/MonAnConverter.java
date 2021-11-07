@@ -2,28 +2,31 @@ package dataAndroidNauAn.converter;
 
 import org.springframework.stereotype.Component;
 
-import dataAndroidNauAn.dto.DanhMucConDTO;
-import dataAndroidNauAn.entity.monAnEntity;
+import dataAndroidNauAn.dto.MonAnDTO;
+import dataAndroidNauAn.entity.MonAnEntity;
 
 @Component
-public class DanhMucConConverter {
+public class MonAnConverter {
 	
-	public monAnEntity toEntity(DanhMucConDTO dto) {
-		monAnEntity entity = new monAnEntity();
+	public MonAnEntity toEntity(MonAnDTO dto) {
+		MonAnEntity entity = new MonAnEntity();
 		entity.setTenMon(dto.getTenMon());
 		entity.setAnh(dto.getAnh());
+		entity.setMaMon(dto.getMaMon());
 		return entity;
 	}
 	
-	public DanhMucConDTO toDTO(monAnEntity entity) {
-		DanhMucConDTO dto = new DanhMucConDTO();
+	public MonAnDTO toDTO(MonAnEntity entity) {
+		MonAnDTO dto = new MonAnDTO();
 		if(entity.getId() != null) {
 			dto.setId(entity.getId());
 		}
 		dto.setTenMon(entity.getTenMon());
 		dto.setAnh(entity.getAnh());
+		dto.setMaMon(entity.getMaMon());
 		dto.setMaDM(entity.getdMuc().getMaDM());
 		return dto;
+		
 	}
 	
 }

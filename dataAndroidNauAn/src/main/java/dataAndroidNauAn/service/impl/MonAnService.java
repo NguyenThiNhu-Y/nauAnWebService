@@ -6,19 +6,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dataAndroidNauAn.converter.DanhMucConConverter;
-import dataAndroidNauAn.dto.DanhMucConDTO;
-import dataAndroidNauAn.entity.monAnEntity;
+import dataAndroidNauAn.converter.MonAnConverter;
+import dataAndroidNauAn.dto.MonAnDTO;
+import dataAndroidNauAn.entity.MonAnEntity;
 import dataAndroidNauAn.entity.DanhMucEntity;
 import dataAndroidNauAn.repository.DanhMucConRepository;
 import dataAndroidNauAn.repository.DanhMucRepository;
-import dataAndroidNauAn.service.IDanhMucConService;
+import dataAndroidNauAn.service.IMonAnService;
 
 @Service
-public class DanhMucConService implements IDanhMucConService{
+public class MonAnService implements IMonAnService{
 
 	@Autowired
-	DanhMucConConverter converter;
+	MonAnConverter converter;
 	
 	@Autowired
 	DanhMucConRepository repository;
@@ -27,8 +27,8 @@ public class DanhMucConService implements IDanhMucConService{
 	DanhMucRepository dmRepository;
 	
 	@Override
-	public DanhMucConDTO save(DanhMucConDTO dto) {
-		monAnEntity entity = new monAnEntity();
+	public MonAnDTO save(MonAnDTO dto) {
+		MonAnEntity entity = new MonAnEntity();
 		entity = converter.toEntity(dto);
 		DanhMucEntity danhMucEntity = dmRepository.findOneByMaDM(dto.getMaDM());
 		entity.setdMuc(danhMucEntity);

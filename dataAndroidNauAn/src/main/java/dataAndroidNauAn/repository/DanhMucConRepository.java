@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import dataAndroidNauAn.entity.monAnEntity;
+import dataAndroidNauAn.entity.MonAnEntity;
 import dataAndroidNauAn.entity.DanhMucEntity;
 
-public interface DanhMucConRepository extends JpaRepository<monAnEntity, Long>{
+public interface DanhMucConRepository extends JpaRepository<MonAnEntity, Long>{
 }
