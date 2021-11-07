@@ -11,14 +11,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "danhMucCon")
-public class DanhMucConEntity {
+public class monAnEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "tenDMC")
-	private String tenDMC;
+	@Column(name = "tenMon")
+	private String tenMon;
 	
 	@Column(name = "anh")
 	private String anh;
@@ -35,12 +35,22 @@ public class DanhMucConEntity {
 		this.id = id;
 	}
 
-	public String getTenDMC() {
-		return tenDMC;
+	
+
+	public String getTenMon() {
+		return tenMon;
 	}
 
-	public void setTenDMC(String tenDMC) {
-		this.tenDMC = tenDMC;
+	public void setTenMon(String tenMon) {
+		this.tenMon = tenMon;
+	}
+
+	public DanhMucEntity getdMuc() {
+		return dMuc;
+	}
+
+	public void setdMuc(DanhMucEntity dMuc) {
+		this.dMuc = dMuc;
 	}
 
 	public String getAnh() {
@@ -51,13 +61,7 @@ public class DanhMucConEntity {
 		this.anh = anh;
 	}
 
-	public DanhMucEntity getDanhMuc() {
-		return dMuc;
-	}
-
-	public void setDanhMuc(DanhMucEntity danhMuc) {
-		this.dMuc = danhMuc;
-	}
+	
 	
 	
 	

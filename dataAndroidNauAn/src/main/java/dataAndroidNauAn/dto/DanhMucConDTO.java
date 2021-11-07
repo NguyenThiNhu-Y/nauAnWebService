@@ -3,7 +3,7 @@ package dataAndroidNauAn.dto;
 public class DanhMucConDTO {
 
 	private Long id;
-	private String tenDMC;
+	private String tenMon;
 	private String anh;
 	private String maDM;
 	
@@ -13,11 +13,12 @@ public class DanhMucConDTO {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getTenDMC() {
-		return tenDMC;
+	
+	public String getTenMon() {
+		return tenMon;
 	}
-	public void setTenDMC(String tenDMC) {
-		this.tenDMC = tenDMC;
+	public void setTenMon(String tenMon) {
+		this.tenMon = tenMon;
 	}
 	public String getAnh() {
 		return anh;

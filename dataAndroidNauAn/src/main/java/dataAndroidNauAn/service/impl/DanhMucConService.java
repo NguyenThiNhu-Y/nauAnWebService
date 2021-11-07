@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import dataAndroidNauAn.converter.DanhMucConConverter;
 import dataAndroidNauAn.dto.DanhMucConDTO;
-import dataAndroidNauAn.entity.DanhMucConEntity;
+import dataAndroidNauAn.entity.monAnEntity;
 import dataAndroidNauAn.entity.DanhMucEntity;
 import dataAndroidNauAn.repository.DanhMucConRepository;
 import dataAndroidNauAn.repository.DanhMucRepository;
@@ -28,10 +28,10 @@ public class DanhMucConService implements IDanhMucConService{
 	
 	@Override
 	public DanhMucConDTO save(DanhMucConDTO dto) {
-		DanhMucConEntity entity = new DanhMucConEntity();
+		monAnEntity entity = new monAnEntity();
 		entity = converter.toEntity(dto);
 		DanhMucEntity danhMucEntity = dmRepository.findOneByMaDM(dto.getMaDM());
-		entity.setDanhMuc(danhMucEntity);
+		entity.setdMuc(danhMucEntity);
 		repository.save(entity);
 		return converter.toDTO(entity);
 	}
