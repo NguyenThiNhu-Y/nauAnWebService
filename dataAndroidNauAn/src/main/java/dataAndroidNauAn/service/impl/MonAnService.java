@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import dataAndroidNauAn.converter.MonAnConverter;
 import dataAndroidNauAn.dto.MonAnDTO;
-import dataAndroidNauAn.entity.MonAnEntity;
 import dataAndroidNauAn.entity.DanhMucEntity;
-import dataAndroidNauAn.repository.MonAnRepository;
+import dataAndroidNauAn.entity.MonAnEntity;
 import dataAndroidNauAn.repository.DanhMucRepository;
+import dataAndroidNauAn.repository.MonAnRepository;
 import dataAndroidNauAn.service.IMonAnService;
 
 @Service
@@ -34,6 +34,19 @@ public class MonAnService implements IMonAnService{
 		entity.setdMuc(danhMucEntity);
 		repository.save(entity);
 		return converter.toDTO(entity);
+	}
+
+	@Override
+	public List<MonAnDTO> getByMaDM(String maDM) {
+		DanhMucEntity dmEntity = dmRepository.findOneByMaDM(maDM);
+		List<MonAnEntity> listEntity = new ArrayList<>();
+		List<MonAnDTO> listDTO = new ArrayList<>();
+		listEntity = repository.findAll();
+		for (MonAnEntity entity : listEntity) {
+			if(converter.toDTO(entity).getMaDM()==dmEntity.getMaDM())
+				listDTO.add(converter.toDTO(entity));
+		}
+		return listDTO;
 	}
 
 //	@Override

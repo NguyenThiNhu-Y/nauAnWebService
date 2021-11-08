@@ -6,5 +6,5 @@ import dataAndroidNauAn.dto.MonAnDTO;
 
 public interface IMonAnService {
 	MonAnDTO save(MonAnDTO model);
-	//List<DanhMucConDTO> getByIdDM(Long idDM);
+	List<MonAnDTO> getByMaDM(String maDM);
 }
