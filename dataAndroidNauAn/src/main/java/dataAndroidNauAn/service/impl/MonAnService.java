@@ -10,7 +10,7 @@ import dataAndroidNauAn.converter.MonAnConverter;
 import dataAndroidNauAn.dto.MonAnDTO;
 import dataAndroidNauAn.entity.MonAnEntity;
 import dataAndroidNauAn.entity.DanhMucEntity;
-import dataAndroidNauAn.repository.DanhMucConRepository;
+import dataAndroidNauAn.repository.MonAnRepository;
 import dataAndroidNauAn.repository.DanhMucRepository;
 import dataAndroidNauAn.service.IMonAnService;
 
@@ -21,7 +21,7 @@ public class MonAnService implements IMonAnService{
 	MonAnConverter converter;
 	
 	@Autowired
-	DanhMucConRepository repository;
+	MonAnRepository repository;
 	
 	@Autowired
 	DanhMucRepository dmRepository;
