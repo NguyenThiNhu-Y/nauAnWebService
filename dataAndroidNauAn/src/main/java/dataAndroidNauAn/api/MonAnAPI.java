@@ -30,8 +30,5 @@ public class MonAnAPI {
 	public List<MonAnDTO> getDanhMucCon(@RequestParam("maDM") String maDM){
 		return service.getByMaDM(maDM);
 	}
-	@GetMapping(value = "/monAn/anh")
-	public String NewFile() {
-		return "<img src=\"/image/"+"annhanh.jpg"+"\\\">";
-	}
+	
 }
